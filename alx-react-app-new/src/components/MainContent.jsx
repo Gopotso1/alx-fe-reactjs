@@ -30,7 +30,7 @@ const MainContent = () => {
           fontFamily: "'Roboto', sans-serif",
         }}
       >
-        Explore the beauty, culture, and history of the world's most beloved cities. Whether you're into adventure, culture, or nature, there's something for everyone.
+        I love to visit New York, Paris, and Tokyo. Explore the beauty, culture, and history of the world's most beloved cities. Whether you're into adventure, culture, or nature, there's something for everyone.
       </p>
     </div>
   );
