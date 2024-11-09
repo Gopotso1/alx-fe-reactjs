@@ -1,8 +1,9 @@
+// src/components/MainContent.jsx
 import React from 'react';
 
 const MainContent = () => {
   return (
-    <div
+    <main
       style={{
         padding: '40px',
         backgroundColor: '#f4f4f4',
@@ -32,7 +33,7 @@ const MainContent = () => {
       >
         I love to visit New York, Paris, and Tokyo. Explore the beauty, culture, and history of the world's most beloved cities. Whether you're into adventure, culture, or nature, there's something for everyone.
       </p>
-    </div>
+    </main>
   );
 };
 
