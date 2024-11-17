@@ -1,126 +1,42 @@
-/* Global Body Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: hwb(0 0% 100% / 0.164); /* Slight gray background for the whole page */
-  margin: 0;
-  padding: 0;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-/* Center the app content */
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding: 20px;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* Search Bar Styles */
-.search-bar {
-  width: 100%;
-  max-width: 500px; /* Restrict width to make it more readable */
-  padding: 12px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  font-size: 16px;
-  margin-bottom: 20px;
-  transition: border-color 0.3s ease;
-}
-
-.search-bar:focus {
-  border-color: #4CAF50; /* Green focus for search input */
-  outline: none;
-}
-
-/* Form and Input Elements (for AddRecipeForm) */
-form {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input,
-textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  width: 100%;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #4CAF50; /* Green border when focused */
-  outline: none;
-}
-
-/* Button Styling */
-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Recipe List Styles */
-.RecipeList {
-  margin-top: 30px;
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Recipe Item Card */
-.RecipeItem {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.RecipeItem h3 {
-  font-size: 20px;
-  margin: 0;
-  font-weight: bold;
-}
-
-.RecipeItem p {
-  font-size: 14px;
-  color: #555;
-}
-
-/* Responsive Styling for smaller screens */
-@media (max-width: 600px) {
-  .App {
-    padding: 10px;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  form {
-    width: 100%;
+  to {
+    transform: rotate(360deg);
   }
+}
 
-  .search-bar {
-    width: 100%;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
+}
 
-  .RecipeList {
-    width: 100%;
-  }
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
