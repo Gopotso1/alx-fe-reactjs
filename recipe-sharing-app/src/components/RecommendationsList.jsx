@@ -10,7 +10,7 @@ const RecommendationsList = () => {
   }, [generateRecommendations]);
 
   return (
-    <div className="recommendations-list">
+    <div>
       <h2>Recommendations</h2>
       {recommendations.map(recipe => (
         <div key={recipe.id}>
