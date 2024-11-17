@@ -5,6 +5,7 @@ import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
 
+
 const App = () => {
   return (
     <Router>
@@ -22,4 +23,3 @@ const App = () => {
 };
 
 export default App;
-
