@@ -7,7 +7,7 @@ const FavoritesList = () => {
   ));
 
   return (
-    <div>
+    <div className="favorites-list">
       <h2>My Favorites</h2>
       {favorites.map(recipe => (
         <div key={recipe.id}>
