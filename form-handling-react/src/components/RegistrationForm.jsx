@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './RegistrationForm.css'; 
+import './RegistrationForm.css'; // Import the CSS file
 
 const validationSchema = Yup.object({
   username: Yup.string().required('Username is required'),
@@ -18,7 +18,6 @@ const RegistrationForm = () => {
         onSubmit={(values, { setSubmitting }) => {
           setSubmitting(true);
           console.log(values);
-
           // Simulate API call
           fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
@@ -40,7 +39,6 @@ const RegistrationForm = () => {
       >
         {({ isSubmitting }) => (
           <Form className="form">
-
             <h2>Register</h2>
             <div className="form-group">
               <label htmlFor="username">Username:</label>
