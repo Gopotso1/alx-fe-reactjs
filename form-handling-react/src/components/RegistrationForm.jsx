@@ -6,16 +6,14 @@ import './RegistrationForm.css'; // Import your form styles
 
 const RegistrationForm = () => {
   // Using useState to store form data
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const initialValues = {
-    username: formData.username,
-    email: formData.email,
-    password: formData.password,
+    username: username,
+    email: email,
+    password: password,
   };
 
   const validationSchema = Yup.object({
@@ -38,7 +36,7 @@ const RegistrationForm = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ values, handleChange, handleBlur }) => (
+        {({ handleChange, handleBlur }) => (
           <Form>
             <div>
               <label htmlFor="username">Username</label>
@@ -48,9 +46,9 @@ const RegistrationForm = () => {
                 id="username"
                 name="username"
                 placeholder="Enter your username"
-                value={values.username}  {/* Binding value */}
-                onChange={handleChange}   {/* Binding onChange */}
-                onBlur={handleBlur}       {/* Binding onBlur */}
+                value={username}  {/* Binding value */}
+                onChange={(e) => setUsername(e.target.value)}   {/* Handle onChange */}
+                onBlur={handleBlur}       {/* Handle onBlur */}
               />
               <ErrorMessage name="username" component="div" className="error-message" />
             </div>
@@ -62,8 +60,8 @@ const RegistrationForm = () => {
                 id="email"
                 name="email"
                 placeholder="Enter your email"
-                value={values.email}  {/* Binding value */}
-                onChange={handleChange}
+                value={email}  {/* Binding value */}
+                onChange={(e) => setEmail(e.target.value)}  {/* Handle onChange */}
                 onBlur={handleBlur}
               />
               <ErrorMessage name="email" component="div" className="error-message" />
@@ -76,8 +74,8 @@ const RegistrationForm = () => {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                value={values.password}  {/* Binding value */}
-                onChange={handleChange}
+                value={password}  {/* Binding value */}
+                onChange={(e) => setPassword(e.target.value)}  {/* Handle onChange */}
                 onBlur={handleBlur}
               />
               <ErrorMessage name="password" component="div" className="error-message" />
