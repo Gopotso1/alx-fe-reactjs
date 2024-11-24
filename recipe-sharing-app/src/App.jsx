@@ -16,7 +16,7 @@ const App = () => {
         <SearchBar />
         <AddRecipeForm />
 
-        //added 
+        //added but remove to run
         <FavoritesList />
         <RecommendationsList />
        
