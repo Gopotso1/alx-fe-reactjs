@@ -9,6 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 const isAuthenticated = false;
 
 function App() {
+  
   return (
     <Router>
       <Routes>
