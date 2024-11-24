@@ -10,40 +10,22 @@ const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Initial values for Formik form
   const initialValues = {
     username: username,
     email: email,
     password: password,
   };
 
-  // Validation schema using Yup (Formik handles this internally, but we're adding manual checks below)
   const validationSchema = Yup.object({
     username: Yup.string().required('Username is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
     password: Yup.string().required('Password is required'),
   });
 
-  const handleSubmit = (values, { resetForm, setErrors }) => {
-    // Manual validation checks
-    if (!values.username) {
-      setErrors({ username: 'Username is required' });
-    }
-    if (!values.email) {
-      setErrors({ email: 'Email is required' });
-    }
-    if (!values.password) {
-      setErrors({ password: 'Password is required' });
-    }
-
-    // If there are no errors, submit the form
-    if (!values.username || !values.email || !values.password) {
-      return;
-    }
-
-    // If no manual validation errors, submit the form (example console log)
+  const handleSubmit = (values, { resetForm }) => {
+    // Form submission logic
     console.log('Form Submitted:', values);
-    resetForm(); // Reset the form after submission
+    resetForm();
   };
 
   return (
@@ -51,21 +33,22 @@ const RegistrationForm = () => {
       <h1>User Registration</h1>
       <Formik
         initialValues={initialValues}
-        validationSchema={validationSchema}  // Formik validation via Yup
-        onSubmit={handleSubmit}  // Handling submit with manual error setting
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
       >
-        {({ values, handleChange, handleBlur, setErrors }) => (
+        {({ handleChange, handleBlur }) => (
           <Form>
             <div>
               <label htmlFor="username">Username</label>
+              {/* Manually binding value using useState */}
               <Field
                 type="text"
                 id="username"
                 name="username"
                 placeholder="Enter your username"
-                value={values.username}
+                value={username}  {/* Binding value */}
                 onChange={(e) => setUsername(e.target.value)}   {/* Handle onChange */}
-                onBlur={handleBlur}
+                onBlur={handleBlur}       {/* Handle onBlur */}
               />
               <ErrorMessage name="username" component="div" className="error-message" />
             </div>
@@ -77,7 +60,7 @@ const RegistrationForm = () => {
                 id="email"
                 name="email"
                 placeholder="Enter your email"
-                value={values.email}
+                value={email}  {/* Binding value */}
                 onChange={(e) => setEmail(e.target.value)}  {/* Handle onChange */}
                 onBlur={handleBlur}
               />
@@ -91,7 +74,7 @@ const RegistrationForm = () => {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                value={values.password}
+                value={password}  {/* Binding value */}
                 onChange={(e) => setPassword(e.target.value)}  {/* Handle onChange */}
                 onBlur={handleBlur}
               />
@@ -107,3 +90,4 @@ const RegistrationForm = () => {
 };
 
 export default RegistrationForm;
+
