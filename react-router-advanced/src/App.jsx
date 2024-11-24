@@ -5,7 +5,6 @@ import Profile from './components/Profile';
 import BlogPost from './components/BlogPost';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// Simulate authentication status
 const isAuthenticated = false;
 
 function App() {
