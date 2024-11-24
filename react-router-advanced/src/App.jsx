@@ -5,6 +5,7 @@ import Profile from './components/Profile';
 import BlogPost from './components/BlogPost';
 import ProtectedRoute from './components/ProtectedRoute';
 
+// Simulate authentication status
 const isAuthenticated = false;
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
           path="/profile" 
           element={<ProtectedRoute isAuthenticated={isAuthenticated} component={Profile} />} 
         />
-        <Route path="/post/:id" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
