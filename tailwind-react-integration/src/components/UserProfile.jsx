@@ -2,9 +2,9 @@ import React from 'react';
 
 const UserProfile = () => {
   return (
-    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto sm:p-4 md:p-6 lg:p-8">
+    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto sm:p-4 md:p-8 lg:p-12">
       <div className="flex flex-col items-center">
-        {/* Profile picture */}
+        {/* Profile Image */}
         <img 
           src="https://via.placeholder.com/150" 
           alt="User Profile" 
