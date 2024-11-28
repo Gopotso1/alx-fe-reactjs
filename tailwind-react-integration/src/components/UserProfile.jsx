@@ -8,7 +8,7 @@ const UserProfile = () => {
         <img 
           src="https://via.placeholder.com/150" 
           alt="User Profile" 
-          className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full border-4 border-gray-300"
+          className="sm:w-24 sm:h-24 w-32 h-32 md:w-36 md:h-36 rounded-full border-4 border-gray-300"
         />
 
         {/* User Information */}
