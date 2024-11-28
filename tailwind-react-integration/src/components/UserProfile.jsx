@@ -13,7 +13,7 @@ const UserProfile = () => {
 
         {/* User Information */}
         <div className="mt-4 text-center">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">John Doe</h2>
+          <h2 className="text-lg sm:text-xl md:text-xl font-semibold text-gray-800">John Doe</h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-2">
             A passionate developer and tech enthusiast who loves building amazing things. Currently exploring React and Tailwind CSS.
           </p>
