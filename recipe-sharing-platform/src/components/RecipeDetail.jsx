@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const RecipeDetail = () => {
-  const { id } = useParams(); // Get the recipe ID from the URL
+  const { id } = useParams(); 
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')  // Fetch the data from the public folder
+    fetch('/data.json')  
       .then((response) => response.json())
       .then((data) => {
-        // Find the recipe by ID
+       
         const foundRecipe = data.find((recipe) => recipe.id === parseInt(id));
         if (foundRecipe) {
           setRecipe(foundRecipe);
