@@ -1,43 +1,16 @@
-
+// src/components/HomePage.jsx
 import { useState, useEffect } from 'react';
-
-
-import spaghettiCarbonaraImage from '../images/spaghetti-carbonara.jpg';
-import chickenTikkaMasalaImage from '../images/chicken-tikka-masala.jpg';
-import vegetableStirFryImage from '../images/vegetable-stir-fry.jpg';
-import beefStewImage from '../images/beef-stew.jpg';
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-   
-    setRecipes([
-      {
-        id: 1,
-        title: "Spaghetti Carbonara",
-        summary: "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-        image: spaghettiCarbonaraImage,
-      },
-      {
-        id: 2,
-        title: "Chicken Tikka Masala",
-        summary: "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-        image: chickenTikkaMasalaImage,
-      },
-      {
-        id: 3,
-        title: "Vegetable Stir Fry",
-        summary: "A healthy and colorful mix of stir-fried vegetables served with rice or noodles.",
-        image: vegetableStirFryImage,
-      },
-      {
-        id: 4,
-        title: "Beef Stew",
-        summary: "A hearty stew made with tender beef, vegetables, and rich broth.",
-        image: beefStewImage,
-      },
-    ]);
+    // Fetch data.json from the public directory
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setRecipes(data);
+      });
   }, []);
 
   return (
