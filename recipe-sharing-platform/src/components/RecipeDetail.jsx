@@ -9,7 +9,7 @@ const RecipeDetail = () => {
     fetch('/data.json')  
       .then((response) => response.json())
       .then((data) => {
-       
+        
         const foundRecipe = data.find((recipe) => recipe.id === parseInt(id));
         if (foundRecipe) {
           setRecipe(foundRecipe);
@@ -33,7 +33,7 @@ const RecipeDetail = () => {
         <img
           src={recipe.image}
           alt={recipe.title}
-          className="w-full md:w-1/2 h-auto object-cover mb-6"
+          className="w-full md:w-1/2 h-auto object-cover mb-6 shadow-lg rounded-lg"
         />
       </div>
       <div>
