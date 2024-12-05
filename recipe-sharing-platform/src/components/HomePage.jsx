@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 
 
@@ -10,7 +11,7 @@ const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-
+   
     setRecipes([
       {
         id: 1,
