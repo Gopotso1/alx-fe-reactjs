@@ -11,13 +11,7 @@ const Search = () => {
     setUsername(event.target.value);
   };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    if (username.trim() === '') return;
-    setLoading(true);
-    setError('');
-    setUserData(null);
-
+  const fetchUserData = async (username) => {
     try {
       const response = await axios.get(`https://api.github.com/users/${username}`);
       const data = response.data;
@@ -32,6 +26,15 @@ const Search = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (username.trim() === '') return;
+    setLoading(true);
+    setError('');
+    setUserData(null);
+    fetchUserData(username);
   };
 
   return (
