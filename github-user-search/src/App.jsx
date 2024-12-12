@@ -16,7 +16,6 @@ function App() {
     setUserData(null);  
 
     try {
-      
       const response = await axios.get(`https://api.github.com/users/${user}`);
       setUserData(response.data); 
     } catch (err) {
@@ -39,13 +38,12 @@ function App() {
 
       {loading && <p>Loading...</p>}
 
-     
       {error && <p>{error}</p>}
 
       {userData && !loading && !error && (
         <div>
           <img src={userData.avatar_url} alt="User Avatar" width="100" />
-          <h2>{userData.name}</h2>
+          <h2 className="profile-name">{userData.name}</h2> {/* Add class here */}
           <p>{userData.bio}</p>
           <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
             View Profile
