@@ -1,0 +1,3 @@
+[submodule "github-user-search"]
+	path = github-user-search
+	url = https://github.com/alx-fe-reactjs/github-user-search.git
